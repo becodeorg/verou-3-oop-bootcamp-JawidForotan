@@ -29,8 +29,8 @@ Class Product
              echo "<h3>Alcohol tax is 21 %</h3><br/>";
              echo "<h3>No discount</h3>";
              $tax = $totalExcTax * 0.21;
-              $discount = 0;
-              $totalIncTax = $totalExcTax + $tax - $discount;
+             $discount = 0;
+             $totalIncTax = $totalExcTax + $tax - $discount;
         }
         return "<h3>Tax: <b>{$tax} € </h3> , discount: {$discount} € , total amount inclusive tax {$totalIncTax} € </b><hr/>";
     }
