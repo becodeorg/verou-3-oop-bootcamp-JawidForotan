@@ -35,6 +35,12 @@ $group2 = [
     $student20 = ["name" => "colin", "grade" => 9],
 ];
 
+$group1Student = $group1[0];
+array_push($group2, $group1Student);
+
+$group2Student = $group2[0];
+array_push($group1, $group2Student);
+
 function getAverage($groupName)
 {
     $name = "";
@@ -51,7 +57,7 @@ function getAverage($groupName)
     echo "<br/>";
     echo "<b>Total group score:</b> {$total}<br/>";
     $amount = sizeof($groupName); 
-    $average = $total/$amount; 
+    $average = round($total/$amount); 
     echo "<b>Average:</b> {$average}";
 }
 echo "<h1>Group 1</h1>";
