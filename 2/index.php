@@ -35,13 +35,22 @@ $group2 = [
     $student20 = ["name" => "colin", "grade" => 9],
 ];
 
-$group1Student = $group1[0];
-array_push($group2, $group1Student);
+// $group1Student = $group1[0];
+// array_push($group2, $group1Student);
 
-$group2Student = $group2[0];
-array_push($group1, $group2Student);
+// $group2Student = $group2[0];
+// array_push($group1, $group2Student);
 
-function getAverage($groupName)
+function pushElement($arrayName, $elementIndex, $arrayToPush)
+{
+    $elementToPush = $arrayName[$elementIndex];
+    array_push($arrayToPush, $elementToPush);
+    return $arrayToPush;
+}
+// $group1 = pushElement($group1, 0, $group2);
+// var_dump($group1) ;
+
+function getArrayInfo($groupName)
 {
     $name = "";
     $grade = 0;
@@ -59,11 +68,15 @@ function getAverage($groupName)
     $amount = sizeof($groupName); 
     $average = round($total/$amount); 
     echo "<b>Average:</b> {$average}";
-}
+} 
+
 echo "<h1>Group 1</h1>";
-getAverage($group1);
+getArrayInfo($group1); 
 echo "<h1>Group 2</h1>";
-getAverage($group2);
+getArrayInfo($group2);
+$group1 = pushElement($group1, 0, $group2);
+echo "<h1>New Group 2 with the first element of group1</h1>";
+getArrayInfo($group1); 
 
 
 ?>
