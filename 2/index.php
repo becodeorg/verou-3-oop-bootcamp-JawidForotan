@@ -54,6 +54,8 @@ function getArrayInfo($groupName)
 {
     $name = "";
     $grade = 0;
+    $min = 0;
+    $max = 0;
     $average = 0;
     $total = 0;
     $amount = 0;
@@ -64,10 +66,10 @@ function getArrayInfo($groupName)
         $total += (int)$grade;
     }
     echo "<br/>";
-    echo "<b>Total group score:</b> {$total}<br/>";
     $amount = sizeof($groupName); 
     $average = round($total/$amount); 
-    echo "<b>Average:</b> {$average}";
+    echo "<b>Average:</b> {$average}<br/>";
+    echo "<b>Total group score:</b> {$total}<br/>";
 } 
 
 echo "<h1>Group 1</h1>";
@@ -76,7 +78,10 @@ echo "<h1>Group 2</h1>";
 getArrayInfo($group2);
 $group1 = pushElement($group1, 0, $group2);
 echo "<h1>New Group 2 with the first element of group1</h1>";
-getArrayInfo($group1); 
+getArrayInfo($group1);
+$group2 = pushElement($group2, 0, $group1);
+echo "<h1>New Group 1 with the first element of group2</h1>";
+getArrayInfo($group2);  
 
 
 ?>

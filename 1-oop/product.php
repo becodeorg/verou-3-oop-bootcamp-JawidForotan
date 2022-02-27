@@ -1,6 +1,6 @@
 <?php
 
-Class Product
+class Product
 {
     public string $name;
     public int $pieces;
